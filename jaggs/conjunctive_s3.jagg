@@ -1,0 +1,26 @@
+# Conjunctive scenario (for 3 judges).
+
+# Variables
+i1, i2, i3
+
+# Number of issues
+3
+# The issues
+1, i1
+2, i2
+3, i3
+
+# The constraints
+In, ( ~i1 | ~i2 | i3)
+In, ( i1 | ~i3 )
+In, ( i2 | ~i3)
+Out, ( ~i1 | ~i2 | i3)
+Out, ( i1 | ~i3 )
+Out, ( i2 | ~i3)
+
+# Number voters, number judgments
+3, 3
+# Number of occurences, accepted labels (labels separated by ';')
+1, 1;2;3
+1, 1
+1, 2

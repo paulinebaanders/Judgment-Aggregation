@@ -1,0 +1,74 @@
+# Preference aggregation with 4 alternatives (reduced).
+
+# Variables
+ab, ac, ad, bc, bd, cd
+
+# Number of issues
+6
+# The issues
+1, ab
+2, ac
+3, ad
+4, bc
+5, bd
+6, cd
+
+# The constraints
+In, (ab & bc) -> ac
+In, (ab & bd) -> ad
+In, (ac & ~bc) -> ab
+In, (ac & cd) -> ad
+In, (ad & ~bd) -> ab
+In, (ad & ~cd) -> ac
+
+In, (~ab & ac) -> bc
+In, (~ab & ad) -> bd
+In, (bc & ~ac) -> ~ab
+In, (bc & cd) -> bd
+In, (bd & ~ad) -> ~ab
+In, (bd & ~cd) -> bc
+
+In, (~ac & ab) -> ~bc
+In, (~ac & ad) -> cd
+In, (~bc & ~ab) -> ~ac
+In, (~bc & bd) -> cd
+In, (cd & ~ad) -> ~ac
+In, (cd & ~bd) -> ~bc
+
+In, (~ad & ab) -> ~bd
+In, (~ad & ac) -> ~cd
+In, (~bd & ~ab) -> ~ad
+In, (~bd & bc) -> ~cd
+In, (~cd & ~ac) -> ~ad
+In, (~cd & ~bc) -> ~bd
+
+Out, (ab & bc) -> ac
+Out, (ab & bd) -> ad
+Out, (ac & ~bc) -> ab
+Out, (ac & cd) -> ad
+Out, (ad & ~bd) -> ab
+Out, (ad & ~cd) -> ac
+
+Out, (~ab & ac) -> bc
+Out, (~ab & ad) -> bd
+Out, (bc & ~ac) -> ~ab
+Out, (bc & cd) -> bd
+Out, (bd & ~ad) -> ~ab
+Out, (bd & ~cd) -> bc
+
+Out, (~ac & ab) -> ~bc
+Out, (~ac & ad) -> cd
+Out, (~bc & ~ab) -> ~ac
+Out, (~bc & bd) -> cd
+Out, (cd & ~ad) -> ~ac
+Out, (cd & ~bd) -> ~bc
+
+Out, (~ad & ab) -> ~bd
+Out, (~ad & ac) -> ~cd
+Out, (~bd & ~ab) -> ~ad
+Out, (~bd & bc) -> ~cd
+Out, (~cd & ~ac) -> ~ad
+Out, (~cd & ~bc) -> ~bd
+
+1, 1
+1, 1;2;3;4;5;6

@@ -1,0 +1,26 @@
+# Preference aggregation with 3 alternatives (reduced).
+
+# Variables
+ab, ac, bc
+
+# Number of issues
+3
+# The issues
+1, ab
+2, ac
+3, bc
+
+# The constraints
+In, (ab & bc) -> ac
+In, (ac & ~bc) -> ab
+In, (~ab & ac) -> bc
+In, (bc & ~ac) -> ~ab
+In, (~ac & ab) -> ~bc
+In, (~bc & ~ab) -> ~ac
+
+Out, (ab & bc) -> ac
+Out, (ac & ~bc) -> ab
+Out, (~ab & ac) -> bc
+Out, (bc & ~ac) -> ~ab
+Out, (~ac & ab) -> ~bc
+Out, (~bc & ~ab) -> ~ac
